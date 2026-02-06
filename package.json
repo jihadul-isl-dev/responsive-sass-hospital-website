@@ -4,8 +4,9 @@
   "description": "",
   "main": "main.js",
   "scripts": {
-    "build": "sass scss/style.scss css/style.css && postcss css/style.css -0 css/style.css",
-    "watch": "sass --watch scss:css"
+    "build": "sass scss/style.scss css/style.css && postcss css/style.css -o css/style.css",
+    "watch": "sass --watch scss:css",
+    "watch:all": "npm run watch & npx postcss css/style.css --watch --use autoprefixer -o css/style.css"
   },
   "keywords": [],
   "author": "",
