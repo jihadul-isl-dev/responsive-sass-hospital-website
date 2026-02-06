@@ -12,4 +12,9 @@
   color: $textColor;
   cursor: pointer;
   transition: all 400ms ease;
+
+  &:hover {
+    background: lighten($background-color, 8%);
+    box-shadow: 0 1rem 1.6rem rgba(config.$black-color, 0.15);
+  }
 }

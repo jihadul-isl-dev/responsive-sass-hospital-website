@@ -29,11 +29,37 @@ section {
 
   & > p {
     text-align: center;
-    width: 45%;
+    width: 42%;
     margin: 0.6rem auto 2.5rem;
   }
 }
 
 .btn {
   @include mixins.button;
+}
+
+.btn-primary {
+  @include mixins.button(config.$white-color, config.$primary-color);
+}
+
+// ==============MEDIA QUERIES (MEDIUM DEVICES)================
+@media screen and (max-width: 1024px) {
+  .contaiiner {
+    width: config.$container-md;
+  }
+
+  section {
+    & > p {
+      width: 55%;
+    }
+  }
+}
+
+// =============MEDIA QUERIES (SMALL DEVICES)==================
+@media screen and (max-width: 600px) {
+  section {
+    & > p {
+      width: config.$container-md;
+    }
+  }
 }
