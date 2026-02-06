@@ -1,7 +1,19 @@
 @use "config";
 @use "mixins";
 
-.contaiiner {
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.5;
+  color: config.$dark-color;
+  background: rgba(config.$primary-color-variant, 0.1);
+  user-select: none;
+}
+
+.container {
   width: config.$container-lg;
   margin: 0 auto;
 }
@@ -29,11 +41,37 @@ section {
 
   & > p {
     text-align: center;
-    width: 45%;
+    width: 42%;
     margin: 0.6rem auto 2.5rem;
   }
 }
 
 .btn {
   @include mixins.button;
+}
+
+.btn-primary {
+  @include mixins.button(config.$white-color, config.$primary-color);
+}
+
+// ==============MEDIA QUERIES (MEDIUM DEVICES)================
+@media screen and (max-width: 1024px) {
+  .container {
+    width: config.$container-md;
+  }
+
+  section {
+    & > p {
+      width: 55%;
+    }
+  }
+}
+
+// =============MEDIA QUERIES (SMALL DEVICES)==================
+@media screen and (max-width: 600px) {
+  section {
+    & > p {
+      width: config.$container-md;
+    }
+  }
 }
